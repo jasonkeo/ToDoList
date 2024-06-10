@@ -31,7 +31,7 @@ export default function List() {
 
     <div className="">
       
-      <form onSubmit="return false" className="mx-auto bg-grey-500" onSubmit={additem}>
+      <form className="mx-auto bg-grey-500" onSubmit={additem}>
 
 
         <input placeholder="Add task" id="form" className="rounded-full border-2 border-black-500  px-2 py-2 mx-2" type="text" />
