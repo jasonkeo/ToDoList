@@ -6,7 +6,7 @@ import Items from './items';
 
 export default function List() {
 
-  let [todoitem, setitems] = useState<List>([]);
+  let [todoitem, setitems] = useState<string[]>([]);
   
 
 
