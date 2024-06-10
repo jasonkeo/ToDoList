@@ -9,8 +9,8 @@ export default function List() {
   let [todoitem, setitems] = useState<string[]>([]);
   
 
-
-  function additem(event) {
+//s
+  function additem(event: React.FormEvent) {
     event.preventDefault();
     if (document.getElementById('form').value == '') {
       return;
