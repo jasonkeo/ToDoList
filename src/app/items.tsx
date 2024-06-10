@@ -6,7 +6,7 @@ interface ItemsProps {
 
 }
 
-export default function Items({ listofitems, setListofitems }) {
+export default function Items({ listofitems, setListofitems }: ItemsProps) {
   function remove(index){
     const newList = [...listofitems];
     newList.splice(index, 1);
