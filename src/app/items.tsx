@@ -1,5 +1,11 @@
 
 
+interface ItemsProps {
+  listofitems: string[];
+  setListofitems: React.Dispatch<React.SetStateAction<string[]>>;
+
+}
+
 export default function Items({ listofitems, setListofitems }) {
   function remove(index){
     const newList = [...listofitems];
