@@ -9,17 +9,17 @@ export default function List() {
   let [todoitem, setitems] = useState<string[]>([]);
   
 
-
+//s
   function additem(event: React.FormEvent) {
     event.preventDefault();
-    const formElement = document.getElementById('form');
-    if (formElement && formElement.value === '') {
+    ;
+    if (document.getElementById('form') && document.getElementById('form').value === '') {
       return;
     }
   
-    if (formElement) {
-      setitems([...todoitem, formElement.value]);
-      formElement.value = '';
+    if (document.getElementById('form')) {
+      setitems([...todoitem, document.getElementById('form').value]);
+      document.getElementById('form').value = '';
     }
   }
 
