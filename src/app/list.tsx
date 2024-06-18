@@ -31,8 +31,8 @@ export default function List() {
 
 
   return (
-
-    <div className="">
+    
+      <div className="justify-between flex flex-col items-center justify-center">
 
       <form className="mx-auto bg-grey-500" onSubmit={additem}>
 
@@ -42,12 +42,15 @@ export default function List() {
 
       </form>
 
-
+      
       <div className="my-4">
         <Items listofitems={todoitem} setListofitems={setitems} />
       </div>
+
     </div>
 
+    
+    
 
   );
 }
