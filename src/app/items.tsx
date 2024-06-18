@@ -13,14 +13,18 @@ export default function Items({ listofitems, setListofitems }: ItemsProps) {
     setListofitems(newList);
   }
 
+  
+
   if (listofitems) {
     return (
-      <div style={{ width: '60vw' }} className="">
+      <div style={{ width: '60vw',height: '70vh',}} className="border-4 border-black-900 overflow-scroll">
         {listofitems.map((item, index) => (
-        <div className="my-2 border-2 border-black-500 px-2 py-2 flex items-center justify-between" key={index}>
+        <div className="m-2 border-2 border-black-500 px-2 py-2 flex items-center justify-between" key={index}>
+      
           <div style={{  width: '55vw', overflowWrap: 'break-word' }} className="">{index + 1}. {item} </div>
           
           <button onClick={() => remove(index)} className="text-red-500 text-3xl p-0 mx-2 rounded-full"> &times; </button>
+          
         </div>
 
           

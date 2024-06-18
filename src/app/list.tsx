@@ -32,9 +32,9 @@ export default function List() {
 
   return (
     
-      <div className="justify-between flex flex-col items-center justify-center">
+      <div className="flex flex-col">
 
-      <form className="mx-auto bg-grey-500" onSubmit={additem}>
+      <form className="my-3 mx-auto bg-grey-500" onSubmit={additem}>
 
 
         <input placeholder="Add task" id="form" className="rounded-full border-2 border-black-500  px-2 py-2 mx-2" type="text" />
@@ -43,7 +43,7 @@ export default function List() {
       </form>
 
       
-      <div className="my-4">
+      <div className="my-1">
         <Items listofitems={todoitem} setListofitems={setitems} />
       </div>
 
