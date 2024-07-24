@@ -17,7 +17,7 @@ export default function Items({ listofitems, setListofitems }: ItemsProps) {
 
   if (listofitems) {
     return (
-      <div style={{ minWidth: '300px',width: '60vw',height: '70vh'}} className="border-4 border-black-100 overflow-scroll">
+      <div style={{ minWidth: '300px',width: '70vw',height: '70vh'}} className="border-4 border-black-100 overflow-scroll">
         {listofitems.map((item, index) => (
         <div className="m-2 border-2 border-black-500 px-2 py-2 flex items-center justify-between" key={index}>
       

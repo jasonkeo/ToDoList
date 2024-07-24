@@ -84,9 +84,9 @@ export default function List() {
 
   return (
     
-      <div className="flex flex-col">
-        <p className={`${!capAmount()? 'hidden': 'italic visible text-red-500'} text-[1rem] text-center`}>You have reached capped amount. Please delete some notes to make more.</p>
-      <form className="my-3 mx-auto bg-grey-500" onSubmit={additem}>
+      <div className="flex flex-col items-center justify-center">
+        <p className={`${!capAmount()? 'hidden': 'italic visible text-red-500'} mx-5 text-[1rem] text-center`}>You have reached capped amount. Please delete some notes to make more.</p>
+      <form className="my-3 bg-grey-500" onSubmit={additem}>
 
 
         <input placeholder="Add task" id="form" className="rounded-full border-2 border-black-500  px-2 py-2 mx-2" type="text" disabled={capAmount()}/>
