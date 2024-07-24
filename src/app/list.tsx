@@ -4,12 +4,13 @@
 import Items from './items';
 import React, { use, useEffect, useState } from 'react';
 import app from './firebase';
-import { getFirestore, doc, setDoc, getDoc, onSnapshot, updateDoc } from 'firebase/firestore';
+import { getFirestore, doc, setDoc, getDoc, onSnapshot } from 'firebase/firestore';
 
 //dw
 export default function List() {
   app();
-  let [todoitem, setitems] = useState<string[]>([]);
+  let [todoitem, setitems] = useState<string[]>();
+  
   const firestore = getFirestore();
   const numberDocPath = 'data/todo';
   const dataRef = doc(firestore, numberDocPath);
@@ -18,7 +19,7 @@ export default function List() {
     var temp = {
       list: todoitem,
     }
-    await updateDoc(dataRef, temp);
+    await setDoc(dataRef, temp);
     
   }
   function capAmount() {
@@ -40,6 +41,7 @@ export default function List() {
       if (doc.exists()) {
         console.log(JSON.stringify(doc.data()));
         let lst = doc.data().list;
+        
         setitems(lst);
       } else {
         console.log('No such document');
