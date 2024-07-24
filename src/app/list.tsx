@@ -30,7 +30,7 @@ export default function List() {
   function capAmount() {
     if (todoitem) {
       if (todoitem.length >= 15) {
-        alert('You have reached the maximum amount of items');
+        
         return true;
         
 
@@ -86,11 +86,11 @@ export default function List() {
   return (
     
       <div className="flex flex-col">
-
+        <p className={`${!capAmount()? 'hidden': 'italic visible text-red-500'} text-center`}>You have reached capped amount. Please delete some notes to make more.</p>
       <form className="my-3 mx-auto bg-grey-500" onSubmit={additem}>
 
 
-        <input placeholder="Add task" id="form" className="rounded-full border-2 border-black-500  px-2 py-2 mx-2" type="text" />
+        <input placeholder="Add task" id="form" className="rounded-full border-2 border-black-500  px-2 py-2 mx-2" type="text" disabled={capAmount()}/>
 
 
       </form>
