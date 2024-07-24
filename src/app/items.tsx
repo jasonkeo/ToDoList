@@ -62,7 +62,7 @@ export default function Items({ initial, listofitems, setListofitems }: ItemsPro
                 </div>
               </div>
 
-              <div>
+              <div className='shrink-0'>
                 <button onClick={() => openForm(index)} className="p-0 mx-[10px]"> <Pencil size={20} /> </button>
                 <button onClick={() => remove(index)} className="text-red-500 p-0 mx-[5px]"> <Trash2 size={20} /> </button>
 
