@@ -9,7 +9,7 @@ import { getFirestore, doc, setDoc, getDoc, onSnapshot, updateDoc } from 'fireba
 //dw
 export default function List() {
   app();
-  let [todoitem, setitems] = useState<string[]>();
+  let [todoitem, setitems] = useState<string[]>([]);
   const firestore = getFirestore();
   const numberDocPath = 'data/todo';
   const dataRef = doc(firestore, numberDocPath);
