@@ -1,13 +1,37 @@
 'use client'
 
-import { useState } from "react";
+
 import Items from './items';
+import React, { useEffect, useState } from 'react';
+import app from './firebase';
+import { getFirestore, doc, setDoc, getDoc, onSnapshot } from 'firebase/firestore';
 
 
 export default function List() {
-
+  app();
   let [todoitem, setitems] = useState<string[]>([]);
+  const firestore = getFirestore();
+  const numberDocPath = 'data/todo';
+  const dataRef = doc(firestore, numberDocPath);
 
+  async function writeData() {
+    const temp = {
+      value: value + 1
+    };
+    await setDoc(dataRef, temp);
+    setValue(value + 1);
+  }
+  
+  useEffect(() => {
+    const unsubscribe = onSnapshot(dataRef, (doc) => {
+      if (doc.exists()) {
+        console.log(JSON.stringify(doc.data()));
+        let num = doc.data().value;
+        setItems(num);
+      } else {
+        console.log('No such document');
+      }
+    });
 
 
   function additem(event: React.FormEvent) {
