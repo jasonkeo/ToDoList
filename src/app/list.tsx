@@ -6,10 +6,10 @@ import React, { use, useEffect, useState } from 'react';
 import app from './firebase';
 import { getFirestore, doc, setDoc, getDoc, onSnapshot, updateDoc } from 'firebase/firestore';
 
-
+//dw
 export default function List() {
   app();
-  let [todoitem, setitems] = useState<string[]>();
+  let [todoitem, setitems] = useState<string[]>(['loading']);
   const firestore = getFirestore();
   const numberDocPath = 'data/todo';
   const dataRef = doc(firestore, numberDocPath);
