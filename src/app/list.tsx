@@ -39,7 +39,7 @@ export default function List() {
     }
 
   }
-  useEffect(() => { writeData(todoitem) }, [todoitem]);
+  useEffect(() => { writeData() }, [todoitem]);
 
   useEffect(() => {
 
