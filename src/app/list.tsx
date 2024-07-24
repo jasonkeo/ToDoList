@@ -29,7 +29,7 @@ export default function List() {
   }
   function capAmount() {
     if (todoitem) {
-      if (todoitem.length >= 15) {
+      if (todoitem.length > 14) {
         
         return true;
         
@@ -39,7 +39,7 @@ export default function List() {
     }
   
   }
-  useEffect(() => { capAmount() ? null : writeData(todoitem) } , [todoitem]);
+  useEffect(() => { writeData(todoitem) } , [todoitem]);
   
   useEffect(() => {
 
@@ -67,11 +67,10 @@ export default function List() {
         return;
       }
 
-
+      
       if (todoitem === undefined) {
         setitems([inputElement.value]);
         inputElement.value = '';
-        alert('f')
         return;
       }
       setitems([...todoitem, inputElement.value]);
@@ -86,7 +85,7 @@ export default function List() {
   return (
     
       <div className="flex flex-col">
-        <p className={`${!capAmount()? 'hidden': 'italic visible text-red-500'} text-center`}>You have reached capped amount. Please delete some notes to make more.</p>
+        <p className={`${!capAmount()? 'hidden': 'italic visible text-red-500'} text-[1rem] text-center`}>You have reached capped amount. Please delete some notes to make more.</p>
       <form className="my-3 mx-auto bg-grey-500" onSubmit={additem}>
 
 
