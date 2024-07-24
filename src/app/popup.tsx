@@ -22,14 +22,29 @@ interface EditProps {
     id: number;
 }
 
+import { getFirestore, doc, setDoc, getDoc, onSnapshot } from 'firebase/firestore';
+
 
 export const Edit: React.FC<EditProps> = ({ open, setOpen, todoitem, setListofitems, id }) => {
 
     const [formData, setData] = useState(todoitem[id]);
+    const firestore = getFirestore();
+    const numberDocPath = 'data/todo';
+    const dataRef = doc(firestore, numberDocPath);
+   
 
+    async function writeData() {
+        
+        var temp = {
+          list: todoitem,
+        }
+        await setDoc(dataRef, temp);
+    
+    }
 
     useEffect(() => {
         setData(todoitem[id]);
+        
     }, [todoitem, id]);
 
 
@@ -38,6 +53,7 @@ export const Edit: React.FC<EditProps> = ({ open, setOpen, todoitem, setListofit
         let temp = todoitem
         temp[id] = formData
         setListofitems(temp)
+        writeData()
         setOpen(false)
 
 

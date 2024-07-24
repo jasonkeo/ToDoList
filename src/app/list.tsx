@@ -5,7 +5,7 @@ import Items from './items';
 import React, { use, useEffect, useState } from 'react';
 import app from './firebase';
 import { getFirestore, doc, setDoc, getDoc, onSnapshot } from 'firebase/firestore';
-import { init } from 'next/dist/compiled/webpack/webpack';
+
 
 //dw
 export default function List() {
@@ -17,7 +17,7 @@ export default function List() {
   const numberDocPath = 'data/todo';
   const dataRef = doc(firestore, numberDocPath);
 
-  async function writeData(newdata: any) {
+  async function writeData() {
     if (initial) {
       return;
     }
