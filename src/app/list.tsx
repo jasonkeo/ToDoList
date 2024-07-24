@@ -58,7 +58,11 @@ export default function List() {
       }
 
 
-
+      if (todoitem === undefined) {
+        setitems([inputElement.value]);
+        inputElement.value = '';
+        return;
+      }
       setitems([...todoitem, inputElement.value]);
       //writeData(inputElement.value)
       inputElement.value = '';
